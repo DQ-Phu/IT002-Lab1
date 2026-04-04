@@ -1,0 +1,23 @@
+# depslib dependency file v1.0
+1775315955 source:e:\test block\it002 - lab 2\src\main.cpp
+	<iostream>
+	"NgayThangNam.h"
+
+1775315755 e:\test block\it002 - lab 2\include\ngaythangnam.h
+
+1775316170 source:e:\test block\it002 - lab 2\src\ngaythangnam.cpp
+	"NgayThangNam.h"
+	<iostream>
+	<limits>
+
+1775315955 source:e:\test block\it002 - lab 2\bt1_btth2\src\main.cpp
+	<iostream>
+	"NgayThangNam.h"
+
+1775315755 e:\test block\it002 - lab 2\bt1_btth2\include\ngaythangnam.h
+
+1775316170 source:e:\test block\it002 - lab 2\bt1_btth2\src\ngaythangnam.cpp
+	"NgayThangNam.h"
+	<iostream>
+	<limits>
+
