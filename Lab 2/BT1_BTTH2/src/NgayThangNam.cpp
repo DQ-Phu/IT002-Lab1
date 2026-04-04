@@ -3,10 +3,6 @@
 #include <limits>
 using namespace std;
 
-
-/* Đầu vào là một phân số nhập vào
-Đầu ra la */
-
 /* Hàm kiểm tra năm nhuận
 Đàu vào: Năm
 Đầu ra: True nếu là năm nhuận, ngược lại thì False */
