@@ -10,9 +10,9 @@ using namespace std;
 /* Hàm kiểm tra năm nhuận
 Đàu vào: Năm
 Đầu ra: True nếu là năm nhuận, ngược lại thì False */
-bool leapCheck (int Y)
+bool leapCheck (int iNam)
 {
-    if ((Y % 4 == 0 && Y % 100 != 0) || Y % 400 == 0)
+    if ((iNam % 4 == 0 && iNam % 100 != 0) || iNam % 400 == 0)
         return true;
     return false;
 }
@@ -20,19 +20,19 @@ bool leapCheck (int Y)
 /*Hàm kiểm tra số ngày trong tháng
 Đàu vào: Tháng, Năm
 Đầu ra: Số ngày trong tháng đó */
-int howManyDays(int M, int Y)
+int howManyDays(int iThang, int iNam)
 {
     int days[] = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
-    if (M == 2 && leapCheck(Y)) //Kiểm tra tháng 2 năm nhuận
+    if (iThang == 2 && leapCheck(iNam)) //Kiểm tra tháng 2 năm nhuận
         return 29;
-    return days[M - 1];
+    return days[iThang - 1];
 }
 
 
 void NgayThangNam::Nhap(){
     while (true) {
         cout << "Nhap theo dinh dang ngay/thang/nam: \n";
-        cin >> D >> M >> Y;
+        cin >> iNgay >> iThang >> iNam;
 
         // Kiểm tra có kí tự trong input không
         if (cin.fail()) {
@@ -43,13 +43,13 @@ void NgayThangNam::Nhap(){
         }
 
         // Kiểm tra việc nhập ngày tháng năm có hợp lệ
-        if (Y <= 0 || M < 1 || M > 12 || D < 1) {
+        if (iNam <= 0 || iThang < 1 || iThang > 12 || iNgay < 1) {
             cout << "Loi! Ngay thang nam khong hop le!\n";
             continue;
         }
 
         // Kiểm tra số ngày có nhiều hơn số ngày trong từng tháng
-        if (D > howManyDays(M, Y)) {
+        if (iNgay > howManyDays(iThang, iNam)) {
             cout << "Loi! Ngay vuoc qua so ngay trong thang!\n";
             continue;
         }
@@ -60,19 +60,19 @@ void NgayThangNam::Nhap(){
 }
 
 void NgayThangNam::Xuat(){
-    cout << D << "/" << M << "/" << Y << endl;
+    cout << iNgay << "/" << iThang << "/" << iNam << endl;
 }
 
 //Hàm tìm ngày kế tiếp
 void NgayThangNam::NgayThangNamTiepTheo(){
-    D += 1; // cộng ngày với 1 để tìm ngày kế tiếp
-    while (D > howManyDays(M, Y)) // check nếu ngày vược quá số ngày trong tháng
+    iNgay += 1; // cộng ngày với 1 để tìm ngày kế tiếp
+    while (iNgay > howManyDays(iThang, iNam)) // check nếu ngày vược quá số ngày trong tháng
     {
-        D = 1;
-        M++;  // thêm 1 tháng
-        if (M > 12) { // check nếu tháng vược quá 12
-            M = 1;
-            Y++; // thêm 1 năm
+        iNgay = 1;
+        iThang++;  // thêm 1 tháng
+        if (iThang > 12) { // check nếu tháng vược quá 12
+            iThang = 1;
+            iNam++; // thêm 1 năm
         }
     }
 }

@@ -5,9 +5,9 @@
 class NgayThangNam
 {
     private:
-        int D;
-        int M;
-        int Y;
+        int iNgay;
+        int iThang;
+        int iNam;
     public:
         void Nhap();
         void Xuat();
