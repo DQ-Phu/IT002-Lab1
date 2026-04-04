@@ -3,9 +3,6 @@
 #include <limits>
 using namespace std;
 
-/* Đầu vào là một phân số nhập vào
-Đầu ra la */
-
 /* Hàm tìm UCLN
 Đầu vào là tử và mẫu của môt phân số
 Đầu ra là ước chung lớn nhất của tử và mẫu */
